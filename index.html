@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Golden Spiral</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div style="float: left; width: 40%;">
+        <button onclick="drawPoints()">Manual draw</button>
+        <p>Number of points <input type="number" id="number-of-points" min="100" step="1" value="1000"></p>
+        <p>Angle in radians (0 for golden angle) <input type="number" id="angle-in-radians" min="-1" step="0.001"
+                value="0"></p>
+        <p>Maximum distance <input type="number" id="distance-max" min="1" step="1" value="200"></p>
+        <p>Distance power <input type="number" id="distance-power" min="-10" step="0.01" value="1"></p>
+        <p>Auto draw on input changes <input type="checkbox" id="auto-draw" checked="true" /></p>
+        <p>Highlight points (see next inputs) <input type="checkbox" id="highlight-YN" checked="true" /></p>
+        <p>Highlight every n points <input type="number" id="highlight-every" min="1" step="1" value="2"></p>
+        <p>Highlight offset <input type="number" id="highlight-offset" min="0" step="1" value="0"></p>
+        <p>Stroke points <input type="checkbox" id="stroke-YN" checked="true" /></p>
+        <p>Link points <input type="checkbox" id="line-YN" /></p>
+        <p>
+            Animations:
+            <button onclick="clearAnimation()">Clear animation if running</button><br><br>
+            <button onclick="animationIncreasePoints(100, 2000)">From 100 points to 2000</button><br>
+            <button onclick="animationIncreaseAngle(0.001, 2, 0.001)">Angle from 0.001 to 4</button><br>
+            <button onclick="animationHighlightIncreaseOffset(34, 13, 13, 5000)">Highlight 34, offset increase by 13
+                (result: clockwise rotation)</button><br>
+            <button onclick="animationHighlightIncreaseOffset(55, 21, 21, 5000)">Highlight 55, offset increase by 21
+                (result: anticlockwise rotation)</button><br>
+            <button onclick="animationDistancePower(4, -4, -0.01)">Distance power from 4 to -4</button><br>
+        </p>
+        <p>Please do not modify inputs until animation is finished. You may call another animation</p>
+
+    </div>
+    <div id="p5-container" style="float: right;"></div>
+    <br>
+</body>
+
+</html>
